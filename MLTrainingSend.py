@@ -19,12 +19,10 @@ record = {}
 table_service.create_table(getMLTableName())
 
 def analog_read(channel):
-    if channel == 0:
-        return generateRandom('x')
-    if channel == 1:
-        return generateRandom('y')
-    if channel == 2:
-        return generateRandom('z')
+        r = spi.xfer2([1, (8 + channel) << 4, 0])
+        adc_out = ((r[1]&3) << 8) + r[2]
+        return adc_out
+
 
 while True: 
     x = get_input_type()
