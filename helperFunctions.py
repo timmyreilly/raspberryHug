@@ -77,8 +77,8 @@ def getQueueCount():
 
 def get_input_type():
     'returns n or s and nothing else - TODO: still having issues with returning none'
-    state = raw_input("Enter 'n' for neutral or 's' for shaking -> ")
-    if state != 'n' and state != 's' :
+    state = raw_input("Enter 'n' for neutral, 's' for shaking, or 'a' for spinning -> ")
+    if state != 'n' and state != 's' and state != 'a':
         print "Invalid input. Try Again "
         get_input_type()
     else:
