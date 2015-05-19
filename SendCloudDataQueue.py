@@ -37,7 +37,7 @@ a_r = analog_read
 
 while True:
 	for abcd in periods: 
-		time.sleep(0.2)
+		time.sleep(1)
 		record.update({abcd+'X': a_r(0), abcd+'Y': a_r(1), abcd+'Z': a_r(2)})
 		print record
 	print sorted(record)
